@@ -127,7 +127,7 @@ disable_top_img: false
 index_img: https://www.dmoe.cc/random.php         # xxxxxxxxx  页面封面
 
 # If the banner of page not setting, it will show the top_img
-default_top_img:      # xxxxxxxxx     文章默认封面
+default_top_img: https://api.yimian.xyz/img      # xxxxxxxxx     文章默认封面
 
 # The banner image of archive page
 archive_img:
