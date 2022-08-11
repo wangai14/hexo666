@@ -891,7 +891,7 @@ inject:
     #- '<div class="sliderbar_ee"><span style="color:rgb(186, 94, 87);"> ⇦ </span> <div class="con_ee"><img src="https://cdn.jsdelivr.net/gh/zhaoze-jpg/Xianqi@main/img/qq.jpg" alt="" style=" width: 200px;"></div></div>'
     #- <script defer type="text/javascript" src="https://cdn.jsdelivr.net/gh/zhaoze-jpg/Xianqi@main/js/index_ee.js"></script>
                                                                 # tencent（QQ音乐）
-    - <div class="aplayer no-destroy" data-id="1776127550" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="auto" data-autoplay="true" muted></div>   # xxxxxxxxxx
+    - <div class="aplayer no-destroy" data-id="3220413036" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="auto" data-autoplay="true" muted></div>   # xxxxxxxxxx
     #- <script>new Artitalk({appId: 'o2lydQokojD1IP8EGhex24WU-MdYXbMMI',appKey: '8ykSyPm9CwzCDdR5dbid1AWT'})</script>
 # CDN
 # Don't modify the following settings unless you know how they work
