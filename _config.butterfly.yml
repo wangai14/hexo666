@@ -75,8 +75,8 @@ copy:
 # formal:
 #   icon: link || the description
 social:
-  fab fa-github: https://github.com/zhaoze-jpg/Xianqi || Github     # xxxxxxxxx
-  fas fa-envelope: tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=xxxxxxx&website=www.qtxml.cn || Email      # xxxxxxxxx
+  fab fa-github: https://github.com/wangai14/hexo666 || Github     # xxxxxxxxx
+  fas fa-envelope: tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=584524731@qq.com&website=www.qtxml.cn || Email      # xxxxxxxxx
 
 # search (搜索)
 # --------------------------------------
@@ -113,11 +113,11 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: https://cdn.jsdelivr.net/gh/zhaoze-jpg/Xianqi@main/img/avatar.jpg      # xxxxxxxxx
+favicon: https://img2.woyaogexing.com/2022/07/30/b64739170ae11532!400x400.jpg      # xxxxxxxxx
 
 # Avatar (頭像)
 avatar:
-  img: https://cdn.jsdelivr.net/gh/zhaoze-jpg/Xianqi@main/img/avatar.jpg       # xxxxxxxxx
+  img: https://img2.woyaogexing.com/2022/07/30/dc43a017cd784a26!400x400.jpg       # xxxxxxxxx
   effect: false
 
 # Disable all banner image
@@ -225,10 +225,10 @@ post_copyright:
 reward:
   enable: true
   QR_code:
-    - img: https://cdn.jsdelivr.net/gh/zhaoze-jpg/Xianqi@main/img/reward/wechat.png         # xxxxxxxxx
+    - img: https://img2.woyaogexing.com/2022/07/27/6f4c7be82217baab!400x400.jpg         # xxxxxxxxx
       link:
       text: 微信
-    - img: https://cdn.jsdelivr.net/gh/zhaoze-jpg/Xianqi@main/img/reward/alipay.jpg         # xxxxxxxxx
+    - img: https://img2.woyaogexing.com/2022/07/27/adaf3409c3a50ab1!400x400.jpg        # xxxxxxxxx
       link:
       text: 支付宝
 
