@@ -1,8 +1,20 @@
 # Header
 menu:
-  Home: /
-  Archives: /archives
-rss: /atom.xml
+  首页: / || fa fa-home
+  归档||fas fa-archive:
+    说说: /artitalk/ || fas fa-book
+    时轴: /archives/ || fa fa-archive
+    分类: /categories/ || fas fa-folder-open
+    标签: /tags/ || fas fa-tags
+  清单||fas fa-heartbeat:
+    音乐: /List/music/ || fa fa-music
+    相册: /List/gallery/ || fa fa-image
+    视频: /List/movies/ || fa fa-film
+  留言板: /comments/ || fa fa-paper-plane
+  百宝箱: /tools/ || fa fa-suitcase
+  Windows: /Windows/ || fa fa-desktop
+  友链: /link/ || fa fa-link
+  关于我: /about/ || fa fa-heart
 
 # Content
 excerpt_link: Read More
