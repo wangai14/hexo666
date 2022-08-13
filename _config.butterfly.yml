@@ -1,6 +1,8 @@
 # Main menu navigation (導航目錄)
 # --------------------------------------
-
+  inject:
+    head:
++     - <link rel="stylesheet" href="/css/custom/twikoo_beautify.css"  media="defer" onload="this.media='all'">
 # electric_clock
 # see https://akilar.top/posts/4e39cf4a/
 menu:
