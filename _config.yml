@@ -3,24 +3,24 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 满心欢喜
-subtitle: '满心欢喜の博客'
-description: '博客因兴趣诞生,在不断完善中'
-keywords: '科学与技术 软件工程 计算机 网络安全 渗透测试'
-author: 满心欢喜
+title: 安知鱼
+subtitle: '生活明朗 万物可爱'
+description: '生活明朗,万物可爱.'
+keywords: 安知鱼,安知鱼的博客,博客,安知鱼博客,陈志伟,Blog,anzhiyu,安知鱼`Blog,hexo,ANZHIYU, HEXO anzhiyu,Blog,anzhiyu`Blog,💖,安,安知,安知鱼,In安知鱼,Go安知鱼,anzhiy
+author: 安知鱼
 language: zh-CN
-timezone: ''
-
-aplayer:
-  meting: true
-  asset_inject: false
+timezone:
+email: anzhiy-c@qq.com
 
 # URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
-root: /
-permalink: :year/:month/:day/:title/
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+url: https://anzhiy.cn
+permalink: posts/:abbrlink.html
 permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
 # Directory
 source_dir: source
 public_dir: public
@@ -30,12 +30,6 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
-  - 'tools/*'
-  - 'tools/**'
-  - 'GoogleHacking/*'
-  - 'GoogleHacking/**'
-  - 'Windows/*'
-  - 'Windows/**'
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -51,14 +45,14 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: false
+  enable: true
   line_number: true
   auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
 prismjs:
-  enable: true
+  enable: false
   preprocess: true
   line_number: true
   tab_replace: ''
@@ -69,7 +63,7 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 12 #下半部文章页面显示数
+  per_page: 10
   order_by: -date
 
 # Category & Tag
@@ -92,7 +86,7 @@ updated_option: 'mtime'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 6   # 推荐文章以及分类标签显示数
+per_page: 10
 pagination_dir: page
 
 # Include / Exclude file(s)
@@ -106,55 +100,247 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: butterfly
 
-# Extensions
-## Plugins: http://hexo.io/plugins/
-#RSS订阅
-plugin:
-- hexo-generator-feed
-- hexo-generator-baidu-sitemap
-- hexo-generator-sitemap
-
-baidusitemap:
-  path: baidusitemap.xml
-  
-sitemap:
-  path: sitemap.xml
-
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-- type: 'git'
-  repo: git@github.com:wangai14/vs.git
-  branch: master
-- type: baidu_url_submitter
+  - type: git
+    repository:
+      # github: git@github.com:anzhiyu-c/anzhiyu-c.github.io.git  #用户名@服务器Ip:git仓库位置
+      github: https://anzhiyu-c:xxx@github.com/anzhiyu-c/anzhiyu-c.github.io.git
+    branch: master
+  - type: baidu_url_submitter # 这是新加的百度主动推送
 
-# baidu submit
-baidu_url_submit:
-  count: 40                                      # 提交最新的一个链接
-  host: ze520.cn     # 在百度站长平台中注册的域名
-  token: gRbThmOSMXNz4Sig    # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
-  path: baidu_urls.txt                # 文本文档的地址， 新链接会保存在此文本文档里
+# 文章链接转数字或字母：https://github.com/rozbo/hexo-abbrlink
+abbrlink:
+	alg: crc16   #算法： crc16(default) and crc32
+	rep: hex     #进制： dec(default) and hex: dec #输出进制：十进制和十六进制，默认为10进制。丨dec为十进制，hex为十六进制
 
-# matery搜索功能
+# 本地搜索：https://github.com/wzpan/hexo-generator-search
 search:
   path: search.xml
-  field: post
+  field: all
+  content: true
 
-# 中文链接转拼音
-permalink_pinyin:
+# Live2D
+## https://github.com/EYHN/hexo-helper-live2d
+live2d:
+  enable: true #开关插件版看板娘
+  scriptFrom: local # 默认
+  # scriptFrom: https://cdn.cbd.int/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url
+  tagMode: false # 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中
+  debug: false # 调试, 是否在控制台输出日志
+  model:
+    use: live2d-widget-model-koharu # npm-module package name
+    # use: https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json # 你的自定义 url
+  display:
+    position: left #控制看板娘位置
+    width: 150 #控制看板娘大小
+    height: 300 #控制看板娘大小
+  mobile:
+    show: false # 手机中是否展示
+
+# https://github.com/hexojs/hexo-generator-sitemap
+sitemap:
+  path: sitemap.xml
+  rel: false
+  tags: true
+  categories: true
+
+# https://github.com/coneycode/hexo-generator-baidu-sitemap
+baidusitemap:
+    path: baidusitemap.xml
+
+# https://github.com/hexojs/hexo-generator-feed
+#Feed Atom
+feed:
+    type: atom
+    path: atom.xml
+    limit: 20
+rss: /atom.xml
+
+# Extensions
+plugins:
+    - hexo-generator-feed
+    - hexo-generator-baidu-sitemap
+    - hexo-generator-sitemap
+
+# 追番插件
+# https://github.com/HCLonely/hexo-bilibili-bangumi
+bangumi: # 追番设置
   enable: true
-  separator: '-' # default: '-'
+  path:
+  vmid: 372204786
+  title: '追番列表'
+  quote: '生命不息，追番不止！'
+  show: 1
+  lazyload: false
+  loading:
+  metaColor:
+  color:
+  webp:
+  progress:
+  extra_options:
+    key: value
+cinema: # 追剧设置
+  enable: false
+  path:
+  vmid: 372204786
+  title: '追剧列表'
+  quote: '生命不息，追剧不止！'
+  show: 1
+  lazyload: true
+  loading:
+  metaColor:
+  color:
+  webp:
+  progress:
+  extra_options:
+    key: value
 
-# emoji表情支持
-githubEmojis: 
+# 百度主动推送
+# https://github.com/huiwang/hexo-baidu-url-submit
+baidu_url_submit:
+  count: 1        # 提交最新的多少个链接
+  host: blog.anzhiy.cn  # 在百度站长平台中添加的域名
+  token: Rgem9kAECSLflQq6   # 秘钥
+  path: baidu_urls.txt   # 文本文档的地址， 新链接会保存在此文本文档里
+
+# APlayer
+# https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md
+aplayer:
+  meting: true
+  asset_inject: false
+
+# Artitalk
+# see https://artitalk.js.org/
+# https://github.com/jerryc127/butterfly-plugins/tree/main/hexo-butterfly-artitalk
+artitalk:
   enable: true
-  className: github-emoji
-  inject: true
-  styles: 
-  customEmojis: 
+  appId: xxxxxx
+  appKey: xxxxxxxx
+  path: artitalk
+  js: https://cdn.cbd.int/artitalk
+  option:
+    shuoPla: 写下今天的快乐叭~
+    avatarPla: https://cdn.cbd.int/anzhiyu-blog@latest/img/post/common/avatar.png
+    bgImg: https://cdn.cbd.int/anzhiyu-blog@latest/img/post/common/comment_bg.png
+    atEmoji: {
+        "酷安-1": "https://7.dusays.com/2021/01/15/d79edde04bd03.png",
+        "酷安-10": "https://7.dusays.com/2021/01/15/e84b0ea48383a.png",
+        "酷安-11": "https://7.dusays.com/2021/01/15/29be1c9d7042d.png",
+        "酷安-12": "https://7.dusays.com/2021/01/15/bfba60ecb6cc6.png",
+        "酷安-13": "https://7.dusays.com/2021/01/15/6019afc31c8d2.png",
+        "酷安-14": "https://7.dusays.com/2021/01/15/3fb064da5dac2.png",
+        "酷安-15": "https://7.dusays.com/2021/01/15/f127ba6ee794a.png",
+        "酷安-16": "https://7.dusays.com/2021/01/15/f1a49c89ec203.png",
+        "酷安-17": "https://7.dusays.com/2021/01/15/03d8aa90d5ffa.png",
+        "酷安-18": "https://7.dusays.com/2021/01/15/238a7c446f1da.png",
+        "酷安-2": "https://7.dusays.com/2021/01/15/725e848a16e1d.png",
+        "酷安-3": "https://7.dusays.com/2021/01/15/156aacb8fde41.png",
+        "酷安-4": "https://7.dusays.com/2021/01/15/49257728eeac3.png",
+        "酷安-5": "https://7.dusays.com/2021/01/15/ef52bbdb8dba2.png",
+        "酷安-6": "https://7.dusays.com/2021/01/15/5e1f58a22eb1b.png",
+        "酷安-7": "https://7.dusays.com/2021/01/15/ae09426ffc052.png",
+        "酷安-8": "https://7.dusays.com/2021/01/15/cc0bd57e14172.png",
+        "酷安-9": "https://7.dusays.com/2021/01/15/98b032b2a71a9.png",
+        "酷安-aixin": "https://7.dusays.com/2021/01/15/e39a8e16b7f6d.png",
+        "酷安-aoman": "https://7.dusays.com/2021/01/15/fdcffa4a8ae4c.png",
+        "酷安-baiyan": "https://7.dusays.com/2021/01/15/98699918092c8.png",
+        "酷安-baoquan": "https://7.dusays.com/2021/01/15/bf297cbf79577.png",
+        "酷安-bishi": "https://7.dusays.com/2021/01/15/59be811ed5b68.png",
+        "酷安-caidao": "https://7.dusays.com/2021/01/15/59baa938beee7.png",
+        "酷安-chigua": "https://7.dusays.com/2021/01/15/8b1afe90b91b8.png",
+        "酷安-ciya": "https://7.dusays.com/2021/01/15/b2c520003cfe2.png",
+        "酷安-coshuaji": "https://7.dusays.com/2021/01/15/f49a7ee4bac5b.png",
+        "酷安-diaoxie": "https://7.dusays.com/2021/01/15/bb0b8e68db729.png",
+        "酷安-doge": "https://7.dusays.com/2021/01/15/7b15f7732d333.png",
+        "酷安-dogehechi": "https://7.dusays.com/2021/01/15/b44cb17d1be10.png",
+        "酷安-dogexiaoku": "https://7.dusays.com/2021/01/15/b8cc577aeab99.png",
+        "酷安-dogeyuanliangta": "https://7.dusays.com/2021/01/15/3de6674a8e701.png",
+        "酷安-doujiyanhuaji": "https://7.dusays.com/2021/01/15/82492e225e877.png",
+        "酷安-erha": "https://7.dusays.com/2021/01/15/6417d51eab768.png",
+        "酷安-erhading": "https://7.dusays.com/2021/01/15/893603585a2d5.png",
+        "酷安-fadai": "https://7.dusays.com/2021/01/15/e91650e7074c2.png",
+        "酷安-fanu": "https://7.dusays.com/2021/01/15/7c8a82e5ae7a1.png",
+        "酷安-hahaha": "https://7.dusays.com/2021/01/15/60330b48c5002.png",
+        "酷安-haixiu": "https://7.dusays.com/2021/01/15/67057f65ef6a9.png",
+        "酷安-han": "https://7.dusays.com/2021/01/15/bd91e01f60814.png",
+        "酷安-hehe": "https://7.dusays.com/2021/01/15/17fbf7df839d6.png",
+        "酷安-heiha": "https://7.dusays.com/2021/01/15/5f8b8d3350d53.png",
+        "酷安-heixian": "https://7.dusays.com/2021/01/15/7a6f5ac8df889.png",
+        "酷安-hejiu": "https://7.dusays.com/2021/01/15/f456859d769a5.png",
+        "酷安-hongyaowan": "https://7.dusays.com/2021/01/15/205c0e553f962.png",
+        "酷安-huaixiao": "https://7.dusays.com/2021/01/15/aa0280dd17f73.png",
+        "酷安-huaji": "https://7.dusays.com/2021/01/15/bc5d47be7dd61.png",
+        "酷安-huanhu": "https://7.dusays.com/2021/01/15/e3645bd074e47.png",
+        "酷安-huoba": "https://7.dusays.com/2021/01/15/52bccfd07cd42.png",
+        "酷安-jingya": "https://7.dusays.com/2021/01/15/fa28851b21757.png",
+        "酷安-jizhi": "https://7.dusays.com/2021/01/15/8fb3db20e2970.png",
+        "酷安-keai": "https://7.dusays.com/2021/01/15/fad3ad127dc91.png",
+        "酷安-kelian": "https://7.dusays.com/2021/01/15/63d75bb5d6deb.png",
+        "酷安-koubi": "https://7.dusays.com/2021/01/15/c22c18faf18fd.png",
+        "酷安-ku": "https://7.dusays.com/2021/01/15/fced019d8cd36.png",
+        "酷安-kuan": "https://7.dusays.com/2021/01/15/196e9683bb4c2.png",
+        "酷安-kuanlvmao": "https://7.dusays.com/2021/01/15/3bd36495075b6.png",
+        "酷安-liuhanhuaji": "https://7.dusays.com/2021/01/15/0677bec17b611.png",
+        "酷安-liulei": "https://7.dusays.com/2021/01/15/f06eac9acc4db.png",
+        "酷安-lvmao": "https://7.dusays.com/2021/01/15/3ad6bcbc4661f.png",
+        "酷安-lvyaowan": "https://7.dusays.com/2021/01/15/eaae5763e0650.png",
+        "酷安-meigui": "https://7.dusays.com/2021/01/15/7d0791eb5bf30.png",
+        "酷安-miaomiao": "https://7.dusays.com/2021/01/15/d2ea812f4dfb5.png",
+        "酷安-mojinghuaji": "https://7.dusays.com/2021/01/15/91338ab3e04b9.png",
+        "酷安-naikezui": "https://7.dusays.com/2021/01/15/7c547fda1e34e.png",
+        "酷安-nanguo": "https://7.dusays.com/2021/01/15/4f065524c5233.png",
+        "酷安-nb": "https://7.dusays.com/2021/01/15/2aca7bdb0ebe2.png",
+        "酷安-ok": "https://7.dusays.com/2021/01/15/a53470afa1c1f.png",
+        "酷安-pen": "https://7.dusays.com/2021/01/15/39077063f798d.png",
+        "酷安-penxue": "https://7.dusays.com/2021/01/15/f793f26b74ddb.png",
+        "酷安-piezui": "https://7.dusays.com/2021/01/15/3fe36dc5ad166.png",
+        "酷安-pu": "https://7.dusays.com/2021/01/15/557d698e30855.png",
+        "酷安-pyjiaoyi": "https://7.dusays.com/2021/01/15/cafc37786127e.png",
+        "酷安-qiang": "https://7.dusays.com/2021/01/15/ee5220d999068.png",
+        "酷安-qinqin": "https://7.dusays.com/2021/01/15/3d8a0587f57f0.png",
+        "酷安-qqdoge": "https://7.dusays.com/2021/01/15/3b782640f81ef.png",
+        "酷安-ruo": "https://7.dusays.com/2021/01/15/1f9103176b58a.png",
+        "酷安-se": "https://7.dusays.com/2021/01/15/e46710cff9b8c.png",
+        "酷安-shounuehuaji": "https://7.dusays.com/2021/01/15/1c131772d1bb2.png",
+        "酷安-shui": "https://7.dusays.com/2021/01/15/27fecb3f84bc7.png",
+        "酷安-tuosai": "https://7.dusays.com/2021/01/15/d211229511504.png",
+        "酷安-tushe": "https://7.dusays.com/2021/01/15/983c8ebd87cf2.png",
+        "酷安-weiqu": "https://7.dusays.com/2021/01/15/ee0a562c20067.png",
+        "酷安-weiweiyixiao": "https://7.dusays.com/2021/01/15/d281ccdecda1a.png",
+        "酷安-weixiao": "https://7.dusays.com/2021/01/15/9ef8b76db9b9c.png",
+        "酷安-wozuimei": "https://7.dusays.com/2021/01/15/996e570245530.png",
+        "酷安-wulian": "https://7.dusays.com/2021/01/15/7e872f685ca1b.png",
+        "酷安-wunai": "https://7.dusays.com/2021/01/15/98741ccc53a16.png",
+        "酷安-wuyu": "https://7.dusays.com/2021/01/15/def9868ab4f79.png",
+        "酷安-wuzuixiao": "https://7.dusays.com/2021/01/15/46bbf77822f18.png",
+        "酷安-xiaoku": "https://7.dusays.com/2021/01/15/fe27d3c2dbbf8.png",
+        "酷安-xiaoyan": "https://7.dusays.com/2021/01/15/64d03bece8262.png",
+        "酷安-xinsui": "https://7.dusays.com/2021/01/15/d94af60c9fb37.png",
+        "酷安-ye": "https://7.dusays.com/2021/01/15/7f9cf72ba2ecd.png",
+        "酷安-yinxian": "https://7.dusays.com/2021/01/15/c32feba1e8817.png",
+        "酷安-yiwen": "https://7.dusays.com/2021/01/15/bc7a5a28808fb.png",
+        "酷安-zaijian": "https://7.dusays.com/2021/01/15/b25ccbf1814ae.png",
+        "酷安-zhoumei": "https://7.dusays.com/2021/01/15/6bd6239753b7a.png"
+      }
+  front_matter:
+    title: 闲言碎语
+    comments: false
+    date: 2021-03-30 15:57:50
+    copyright_author: 安知鱼
+    cover: https://cdn.cbd.int/anzhiyu-blog@latest/img/post/common/anzhiy.cn.jpg
 
-lazyload:
-  enable: false  # 是否开启图片懒加载
-  onlypost: true  # 是否只对文章的图片做懒加载
-  loadingImg: https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg # eg ./images/loading.gif
-
+# hpptalk:
+#   enable: true
+#   domain: chen.2268025923.workers.dev
+#   path: hpptalk
+#   limit: 8
+#   start: 0
+#   js: https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@latest/talk_user.js
+#   css: https://cdn.jsdelivr.net/gh/anzhiyu-c/cdn/qiqi/css/hpptalk.css
+#   option:
+#   front_matter:
+#     title: 闲言碎语
+#     date: 2021-03-30 15:57:50
+#     comments: false
