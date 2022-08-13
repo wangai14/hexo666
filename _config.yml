@@ -128,6 +128,14 @@ deploy:
   branch: master
 - type: baidu_url_submitter
 
+
+# 文章链接转数字或字母：https://github.com/rozbo/hexo-abbrlink
+abbrlink:
+	alg: crc16   #算法： crc16(default) and crc32
+	rep: hex     #进制： dec(default) and hex: dec #输出进制：十进制和十六进制，默认为10进制。丨dec为十进制，hex为十六进制
+
+
+
 # baidu submit
 baidu_url_submit:
   count: 40                                      # 提交最新的一个链接
