@@ -1,4 +1,10 @@
 # Main menu navigation (導航目錄)
+# --------------------------------------
+
+# format: name: link || icon
+# sub-menu
+# name || icon:
+#   name: link || icon
 
 menu:
   首页: / || fa fa-home
@@ -38,8 +44,8 @@ envelope_comment:
 
 artitalk:
   enable: true
-  appId: o2lydQokojD1IP8EGhex24WU-MdYXbMMI   # xxxxxxxxx
-  appKey: 8ykSyPm9CwzCDdR5dbid1AWT           # xxxxxxxxx
+  appId: fL3BERFfB0RWufqgNQSv99lY-MdYXbMMI # xxxxxxxxx
+  appKey: snXOPTXItXraMbk5aI2Itm7A          # xxxxxxxxx
   path:
   js:
   option:
@@ -121,7 +127,7 @@ disable_top_img: false
 index_img: https://www.dmoe.cc/random.php         # xxxxxxxxx  页面封面
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://api.yimian.xyz/img      # xxxxxxxxx     文章默认封面
+default_top_img: https://api.yimian.xyz/img       #xxxxxxxxx     文章默认封面
 
 # The banner image of archive page
 archive_img:
@@ -290,9 +296,7 @@ addtoany:
 comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo
-  use:
-  - Valine
-  - Disqus
+  use: twikoo
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
@@ -303,7 +307,7 @@ comments:
 # disqus
 # https://disqus.com/
 disqus:
-  shortname: xianqi                               # xxxxxxxxx
+  shortname: 满心欢喜の博客                               # xxxxxxxxx
   apikey: # For newest comments widget
 
 # Alternative Disqus - Render comments with Disqus API
@@ -389,11 +393,10 @@ facebook_comments:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId:
-  region:
-  visitor: false
+  envId: https://twikoo-notsprog.vercel.app/
+  region: ap-shanghai
+  visitor: true
   option:
-
 # Chat Services
 # --------------------------------------
 
@@ -533,7 +536,7 @@ tag_ui: # 留空或 index
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background:
+background: url(https://cdn.cbd.int/anzhiyu-blog@latest/img/post/common/site-backgound.jpg)
 
 # Footer Background
 footer_bg: false
@@ -638,21 +641,18 @@ subtitle:
   enable: true
   # Typewriter Effect (打字效果)
   effect: true
-  # loop (循環打字)
+  # loop (循环打字)
   loop: true
-  # source調用第三方服務
-  # source: false 關閉調用
-  # source: 1  調用搏天api的隨機語錄（簡體）
-  # source: 2  調用一言網的一句話（簡體）
-  # source: 3  調用一句網（簡體）
-  # source: 4  調用今日詩詞（簡體）
-  # subtitle 會先顯示 source , 再顯示 sub 的內容
-  source: 4
-  # 如果有英文逗號' , ',請使用轉義字元 &#44;
-  # 如果有英文雙引號' " ',請使用轉義字元 &quot;
-  # 開頭不允許轉義字元，如需要，請把整個句子用雙引號包住
-  # 如果關閉打字效果，subtitle只會顯示sub的第一行文字
-  sub: "落叶的一生 难道只是为了归根吗,既然选择了远方 便只顾风雨兼程"            # xxxxxxxx
+  # source 调用第三方服務
+  # source: false 关闭调用
+  # source: 1  调用一言网的一句話（简体） https://hitokoto.cn/
+  # source: 2  调用一句网（简体） http://yijuzhan.com/
+  # source: 3  调用今日詩詞（简体） https://www.jinrishici.com/
+  # subtitle 会先显示 source , 再显示 sub 的內容
+  source: 3
+  # 如果关闭打字效果，subtitle 只会显示 sub 的第一行文字
+  sub:
+    - 多看书，多看报；少玩电脑，多睡觉          # xxxxxxxx
 
 # Loading Animation (加載動畫)
 preloader: true
@@ -671,9 +671,9 @@ aside:
     description:
     button:
       enable: true
-      icon: fab fa-home
+      icon: fas fa-book
       text: 个人主页
-      link: http://ze520.cn                     # xxxxxxxx
+      link: https://www.daohexo.ml/                    # xxxxxxxx
   card_announcement:
     enable: true
     content: 兴趣爱好才是最大的动力，何不与我共同来攀知识高峰，品翘楚美人！     # xxxxxxxx
